@@ -42,6 +42,9 @@ export default function Home() {
         <div className="h-2"></div>
         <p className="md:ml-auto md:text-lg font-bold text-center">No one looks at pinned messages! Send timed messages throughout your server and automatically answer questions with AI!</p>
       </div>
+      <a href="https://discord.com/api/oauth2/authorize?client_id=1100898467414540348&permissions=1494648760320&scope=bot%20applications.commands" className="shadow-lg py-2 px-4 md:py-4 md:px-6 rounded-md text-xl md:text-2xl font-bold bg-cyan-600 flex flex-row gap-2 items-center hover:scale-110 transition-all">
+        <Image className="w-8 md:w-10" src="/discord-mark-white.svg" alt='discord logo' width={40} height={40} />
+        Add to Discord!
         </a>
 
         <a
