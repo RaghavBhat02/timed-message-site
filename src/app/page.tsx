@@ -30,6 +30,8 @@ export default function Home() {
           </a>
         </div>
       </div>
+export default function Home() {
+  return (
     <main className="p-4 md:p-8 flex flex-col justify-center items-center min-h-screen gap-10">
 
       <div className="flex flex-col items-center justify-center">
