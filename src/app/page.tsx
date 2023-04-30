@@ -23,32 +23,55 @@ type Command = {
   command: string;
   options: Option[];
 }
+
+const setMessage: Command = {
+  command: "/setMessage",
+  options: [
+    {
+      name: "announcement",
+      value: "Gora's Grill Now!"
+    },
+    {
+      name: "channel",
+      value: "#govindas-party"
+    },
+    {
+      name: "time",
+      value: "120"
+    }
+  ]
+}
+const listMessages: Command = {
+  command: "/listMessages",
+  options: []
+}
+
+const removeMessage: Command = {
+  command: "/removeMessage",
+  options: [
+    {
+      name: "messageId",
+      value: "2d7ba34f-35b8-4b28-846e-f79fb2f61ee6"
+    }
+  ]
+}
+function Message({ user, profile, message, command }: MessageProps) {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="flex flex-row gap-2 bg-rose-400 rounded-md p-2 hover:scale-105 transition-all lg:w-3/4 mx-auto">
+      <Image src={profile} alt={`profile pic for ${user}`} className="h-12 w-12 rounded-full bg-berry-blue" width={40} height={40} />
+      <div className="flex flex-col">
+        <span className="text-lg font-semibold">{user}</span>
+        <span>
+          <span className="italic font-semibold">{command?.command} </span>
+          {command?.options.map((opt, i) => 
+            <span key={i}>{opt.name}=<span className="bg-gray-800 p-1 rounded-md">{opt.value}</span> </span>
+          )}
+          <span>{message}</span>
+        </span>
         </div>
       </div>
+  )
+}
 export default function Home() {
   return (
     <main className="p-4 md:p-8 flex flex-col justify-center items-center min-h-screen gap-10">
