@@ -116,6 +116,43 @@ export default function Home() {
             />
           </div>
       </div>
+        <div className="space-y-2">
+          <h2 className="font-bold text-2xl md:text-4xl lg:w-3/4 mx-auto">See your Messages!</h2>
+          <div className="space-y-2">
+            <Message  
+              user="Admin User Gaura" 
+              profile="/profile.jpg"
+              command={listMessages}
+            />
+            <Message  
+              user="Timed Message Bot" 
+              profile="/logo.svg"
+              message={(
+                <div className="bg-rose-600 p-2 rounded-md">
+                  <span className="font-bold text-lg">Your Messages:</span>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-2">
+                    <div className="flex flex-col">
+                      <span className="font-semibold">Message Id</span>
+                      <span>2d7ba34f-35b8-4b28-846e-f79fb2f61ee6</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="font-semibold">Message/Announcement</span>
+                      <span>Gora&apos;s Grill Now</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="font-semibold">Timer (in minutes)</span>
+                      <span>120</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="font-semibold">Channel</span>
+                      <span className="bg-slate-500 px-1 rounded-md max-w-max">#govindas-party</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+            />
+          </div>
+        </div>
       </div>
 
     </main>
