@@ -88,41 +88,36 @@ export default function Home() {
         <Image className="w-8 md:w-10" src="/discord-mark-white.svg" alt='discord logo' width={40} height={40} />
         Add to Discord!
         </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
+      <div className="space-y-4">
+        <h1 className={`text-3xl md:text-6xl font-bold ${michegar.className} lg:w-3/4 mx-auto`}>Check out how we work<span className={inter.className + " italic"}>:</span> </h1>
+        <div className="space-y-2">
+          <h2 className="font-bold text-2xl md:text-4xl lg:w-3/4 mx-auto">Set a Message!</h2>
+          <div className="space-y-2">
+            <Message  
+              user="Admin User Gaura" 
+              profile="/profile.jpg"
+              command={setMessage}
+            />
+            <Message  
+              user="Timed Message Bot" 
+              profile="/logo.svg"
+              message={(<span>You have successsfully set the following message 
+                  <br /> ---- <br /> 
+                  Gora&apos;s Grill Now 
+                  <br /> ---- <br /> 
+                  in the channel<span> </span>
+                  <span className="inline-flex flex-col max-w-max">
+                    <span className="bg-slate-500 px-1 rounded-md">#govindas-party</span>
             </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
+                  <span> </span>
+                  every 120 minutes.
             </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+              )}
+            />
+          </div>
       </div>
+      </div>
+
     </main>
   )
 }
