@@ -68,26 +68,25 @@ function Message({ user, profile, message, command }: MessageProps) {
           )}
           <span>{message}</span>
         </span>
-        </div>
       </div>
+    </div> 
   )
 }
 export default function Home() {
   return (
     <main className="p-4 md:p-8 flex flex-col justify-center items-center min-h-screen gap-10">
-
       <div className="flex flex-col items-center justify-center">
         <h1 className={`text-4xl md:text-6xl font-bold ${michegar.className}`}>Timed Message Bot<span className={inter.className + " italic"}>!</span></h1>
         <div className="w-96 h-64 overflow-clip">
           <Image className="w-96 -translate-y-16" src="/logo.svg" alt="logo" width={600} height={600} />
-      </div>
+        </div>
         <div className="h-2"></div>
         <p className="md:ml-auto md:text-lg font-bold text-center">No one looks at pinned messages! Send timed messages throughout your server and automatically answer questions with AI!</p>
       </div>
       <a href="https://discord.com/api/oauth2/authorize?client_id=1100898467414540348&permissions=1494648760320&scope=bot%20applications.commands" className="shadow-lg py-2 px-4 md:py-4 md:px-6 rounded-md text-xl md:text-2xl font-bold bg-cyan-600 flex flex-row gap-2 items-center hover:scale-110 transition-all">
         <Image className="w-8 md:w-10" src="/discord-mark-white.svg" alt='discord logo' width={40} height={40} />
         Add to Discord!
-        </a>
+      </a>
       <div className="space-y-4">
         <h1 className={`text-3xl md:text-6xl font-bold ${michegar.className} lg:w-3/4 mx-auto`}>Check out how we work<span className={inter.className + " italic"}>:</span> </h1>
         <div className="space-y-2">
@@ -108,14 +107,14 @@ export default function Home() {
                   in the channel<span> </span>
                   <span className="inline-flex flex-col max-w-max">
                     <span className="bg-slate-500 px-1 rounded-md">#govindas-party</span>
-            </span>
+                  </span>
                   <span> </span>
                   every 120 minutes.
-            </span>
+                </span>
               )}
             />
           </div>
-      </div>
+        </div>
         <div className="space-y-2">
           <h2 className="font-bold text-2xl md:text-4xl lg:w-3/4 mx-auto">See your Messages!</h2>
           <div className="space-y-2">
@@ -150,6 +149,21 @@ export default function Home() {
                   </div>
                 </div>
               )}
+            />
+          </div>
+        </div>
+        <div className="space-y-2">
+          <h2 className="font-bold text-2xl md:text-4xl lg:w-3/4 mx-auto">Remove Messages!</h2>
+          <div className="space-y-2">
+            <Message  
+              user="Admin User Gaura" 
+              profile="/profile.jpg"
+              command={removeMessage}
+            />
+            <Message  
+              user="Timed Message Bot" 
+              profile="/logo.svg"
+              message={(<span>You have successfully deleted the message with id <code className="bg-rose-600 px-1">3cf76985-f957-48dd-972f-a9a652bc0af6</code></span>)}
             />
           </div>
         </div>
