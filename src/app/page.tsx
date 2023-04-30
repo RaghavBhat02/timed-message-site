@@ -1,9 +1,28 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-
+import localFont from 'next/font/local';
+import { ReactNode } from 'react';
+import { spawn } from 'child_process';
+const michegar = localFont({
+  src: './Michegar.woff2',
+  display: 'swap'
+})
 const inter = Inter({ subsets: ['latin'] })
+type MessageProps = {
+  user: string;
+  profile: string;
+  command?: Command;
+  message?: ReactNode;
+};
 
-export default function Home() {
+type Option = {
+  name: string;
+  value: string;
+};
+type Command = {
+  command: string;
+  options: Option[];
+}
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
